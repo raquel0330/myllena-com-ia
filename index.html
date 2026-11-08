@@ -4,9 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#7c3aed">
 
-    <title>DASHBOARD</title>
+    <title>Meu Dilema Digital | Dashboard</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,446 +20,477 @@
 
 <body>
 
-    <div class="page-shell">
+<div class="page-shell">
 
-        <header class="topbar">
+    <!-- CABEÇALHO -->
+    <header class="topbar">
 
-            <a class="brand" href="#">
+        <a href="#" class="brand">
+            <span class="brand-icon">MD</span>
+            <span>Meu <strong>Dilema Digital</strong></span>
+        </a>
 
-            </a>
+        <div class="top-tag">
+            <span class="status-dot"></span>
+            Pesquisa escolar · Maratona Tech
+        </div>
 
-            <span class="top-tag">
-                <span class="status-dot"></span>
-                Pesquisa escolar · Maratona Tech
-            </span>
+    </header>
 
-        </header>
 
-        <main>
+    <!-- APRESENTAÇÃO -->
+    <section class="hero">
 
-            <!-- APRESENTAÇÃO -->
+        <div class="hero-copy">
 
-            <section class="hero">
+            <span class="eyebrow">MEU DILEMA DIGITAL</span>
 
-                <div class="hero-copy">
+            <h1>
+                Problemas de acreditar em notícias e sites
+                <span>sem pesquisar a fundo.</span>
+            </h1>
 
-                    <span class="eyebrow">
-                        Meu Dilema Digital
-                    </span>
+            <p>
+                Um olhar sobre como os estudantes avaliam notícias
+                e informações encontradas na internet.
+            </p>
 
-                    <h1>
-                        <span>
-                            Problemas enfrentados ao acreditar em notícias e sites sem pesquisar a fundo..
-                        </span>
-                    </h1>
+            <div class="hero-meta">
+                <span>35 participantes</span>
+                <span>Pesquisa individual</span>
+            </div>
 
-                    <p>
-                        Um olhar sobre como os estudantes avaliam notícias
-                        e informações encontradas na internet.
-                    </p>
+        </div>
 
-                    <div class="hero-meta">
-                        <span>📊 <strong>35</strong> respostas</span>
-                    </div>
+        <!-- ILUSTRAÇÃO ORIGINAL DO CSS -->
+        <div class="hero-art">
 
+            <div class="orbit orbit-one"></div>
+            <div class="orbit orbit-two"></div>
+
+            <div class="hero-card card-back">
+                ✓
+            </div>
+
+            <div class="hero-card card-front">
+
+                <span class="search-symbol">⌕</span>
+
+                <span class="mini-line"></span>
+                <span class="mini-line short"></span>
+                <span class="mini-line"></span>
+
+                <span class="verified">✓ INFORMAÇÃO VERIFICADA</span>
+
+            </div>
+
+            <span class="spark spark-one">✦</span>
+            <span class="spark spark-two">✧</span>
+
+        </div>
+
+    </section>
+
+
+    <!-- TEMA, PERGUNTA E HIPÓTESE -->
+    <section class="research-grid">
+
+        <article class="info-card">
+
+            <div class="card-heading">
+                <span class="info-icon purple">◈</span>
+                <span class="card-label">TEMA DA PESQUISA</span>
+            </div>
+
+            <h2>Meu Dilema Digital</h2>
+
+            <p>
+                Problemas de acreditar em notícias e informações
+                encontradas na internet sem pesquisar a fundo
+                e verificar a confiabilidade das fontes.
+            </p>
+
+        </article>
+
+
+        <article class="info-card">
+
+            <div class="card-heading">
+                <span class="info-icon pink">?</span>
+                <span class="card-label">PERGUNTA DE PESQUISA</span>
+            </div>
+
+            <h2>Questão investigada</h2>
+
+            <p>
+                Os estudantes verificam a confiabilidade das fontes
+                antes de acreditar nas notícias encontradas na internet?
+            </p>
+
+        </article>
+
+
+        <article class="info-card hypothesis-card">
+
+            <div class="card-heading">
+                <span class="info-icon blue">✓</span>
+                <span class="card-label">HIPÓTESE INICIAL</span>
+            </div>
+
+            <h2>O que foi investigado?</h2>
+
+            <p>
+                Os estudantes costumam confiar em informações
+                encontradas na internet sem verificar a confiabilidade
+                dos sites e das fontes.
+            </p>
+
+        </article>
+
+    </section>
+
+
+    <!-- DASHBOARD -->
+    <section class="dashboard-section">
+
+        <div class="section-title">
+
+            <div>
+                <span class="eyebrow">DADOS DA INVESTIGAÇÃO</span>
+
+                <h2>Análise dos resultados</h2>
+
+                <p>
+                    Explore os gráficos e observe as respostas
+                    dos participantes da pesquisa.
+                </p>
+            </div>
+
+            <div class="filter-control">
+
+                <label for="questionFilter">
+                    FILTRAR PERGUNTAS
+                </label>
+
+                <select id="questionFilter">
+
+                    <option value="all">Todas as perguntas</option>
+                    <option value="q1">Pergunta 1</option>
+                    <option value="q3">Pergunta 2</option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+
+        <!-- INDICADORES -->
+        <div class="stat-row">
+
+            <div class="stat-card">
+
+                <div class="stat-icon">👥</div>
+
+                <div>
+                    <span class="stat-label">PARTICIPANTES</span>
+                    <strong>35</strong>
+                    <small>Respostas coletadas</small>
                 </div>
 
-                <div class="hero-art" aria-hidden="true">
+            </div>
 
-                    <div class="orbit orbit-one"></div>
-                    <div class="orbit orbit-two"></div>
 
-                    <div class="hero-card card-back">✓</div>
+            <div class="stat-card">
 
-                    <div class="hero-card card-front">
+                <div class="stat-icon">📊</div>
 
-                        <span class="search-symbol">⌕</span>
-                        <span class="mini-line"></span>
-                        <span class="mini-line short"></span>
-
-                        <span class="verified">
-                            Fonte verificada
-                        </span>
-
-                    </div>
-
-                    <span class="spark spark-one">✦</span>
-                    <span class="spark spark-two">✧</span>
-
+                <div>
+                    <span class="stat-label">PERGUNTAS</span>
+                    <strong>02</strong>
+                    <small>Questões analisadas</small>
                 </div>
 
-            </section>
+            </div>
 
 
-            <!-- TEMA, PERGUNTA E HIPÓTESE -->
+            <div class="stat-card">
 
-            <section class="research-grid">
+                <div class="stat-icon">🔎</div>
 
-                <article class="info-card">
+                <div>
+                    <span class="stat-label">FOCO</span>
+                    <strong>Fontes</strong>
+                    <small>Confiabilidade online</small>
+                </div>
 
-                    <div class="card-heading">
+            </div>
 
-                        <span class="info-icon purple">!</span>
-
-                        <span class="card-label">TEMA</span>
-
-                    </div>
-
-                    <h2>Meu Dilema Digital</h2>
-
-                    <p>
-                        Problemas enfrentados ao acreditar em notícias
-                        e sites sem pesquisar a fundo.
-                    </p>
-
-                </article>
+        </div>
 
 
-                <article class="info-card">
-
-                    <div class="card-heading">
-
-                        <span class="info-icon pink">?</span>
-
-                        <span class="card-label">PERGUNTA DE PESQUISA</span>
-
-                    </div>
-
-                    <p>
-                        Os estudantes verificam a confiabilidade das fontes
-                        antes de acreditar nas notícias encontradas
-                        na internet?
-                    </p>
-
-                </article>
+        <!-- GRÁFICOS -->
+        <div class="charts-grid">
 
 
-                <article class="info-card hypothesis-card">
+            <!-- GRÁFICO 1 -->
+            <article class="chart-card" data-question="q1">
 
-                    <div class="card-heading">
-
-                        <span class="info-icon blue">◎</span>
-
-                        <span class="card-label">HIPÓTESE</span>
-
-                    </div>
-
-                    <p>
-                        Os estudantes costumam confiar em informações
-                        encontradas na internet sem verificar a
-                        confiabilidade dos sites e das fontes.
-                    </p>
-
-                </article>
-
-            </section>
-
-
-            <!-- DASHBOARD -->
-
-            <section class="dashboard-section">
-
-                <div class="section-title">
+                <div class="chart-head">
 
                     <div>
-                        <span class="eyebrow">PAINEL DE RESULTADOS</span>
+
+                        <span class="question-number">PERGUNTA 01</span>
+
+                        <h3>Confiar sem verificar</h3>
+
+                        <p>
+                            Você já acreditou em uma notícia porque muitas
+                            pessoas estavam compartilhando a mesma informação,
+                            mesmo sem saber se era verdadeira?
+                        </p>
+
                     </div>
 
-                    <!-- FILTRO -->
+                    <span class="chart-badge">35 respostas</span>
 
-                    <label class="filter-control" for="questionFilter">
+                </div>
 
-                        <span>Filtrar pergunta</span>
 
-                        <select id="questionFilter">
+                <div class="chart-area">
+                    <canvas id="chart1"></canvas>
+                </div>
 
-                            <option value="all">
-                                Visão geral
-                            </option>
 
-                            <option value="q1">
-                                Pergunta 1 · Confiar sem verificar
-                            </option>
+                <div class="filter-control">
 
-                            <option value="q3">
-                                Pergunta 2 · Notícias compartilhadas
-                            </option>
-
-                        </select>
-
+                    <label for="filterQ1">
+                        VISUALIZAÇÃO DO GRÁFICO
                     </label>
 
-                </div>
+                    <select id="filterQ1">
 
+                        <option value="all">Todas as respostas</option>
 
-                <!-- INDICADORES -->
+                        <option value="relevant">
+                            Destacar respostas mais relevantes
+                        </option>
 
-                <div class="stat-row">
-
-                    <article class="stat-card">
-
-                        <span class="stat-icon">👥</span>
-
-                        <div>
-
-                            <span class="stat-label">
-                                PARTICIPANTES
-                            </span>
-
-                            <strong>35</strong>
-
-                            <small>respostas recebidas</small>
-
-                        </div>
-
-                    </article>
-
-
-                    <article class="stat-card">
-
-                        <span class="stat-icon">📌</span>
-
-                        <div>
-
-                            <span class="stat-label">
-                                PERGUNTAS
-                            </span>
-
-                            <strong>3</strong>
-
-                            <small>sobre hábitos digitais</small>
-
-                        </div>
-
-                    </article>
-
-
-                    <article class="stat-card">
-
-                        <span class="stat-icon">🌐</span>
-
-                        <div>
-
-                            <span class="stat-label">
-                                FOCO
-                            </span>
-
-                            <strong>Fontes</strong>
-
-                            <small>confiabilidade online</small>
-
-                        </div>
-
-                    </article>
+                    </select>
 
                 </div>
 
 
-                <!-- GRÁFICOS -->
+                <div class="insight">
 
-                <div class="charts-grid" id="chartsGrid">
-
-
-                    <!-- GRÁFICO 1 -->
-
-                    <article class="chart-card" data-question="q1">
-
-                        <div class="chart-head">
-
-                            <div>
-
-                                <span class="question-number">
-                                    PERGUNTA 01
-                                </span>
-
-                                <h3>Confiar sem verificar</h3>
-
-                                <p>
-                                    Você já acreditou em uma notícia porque
-                                    muitas pessoas estavam compartilhando
-                                    a mesma informação mesmo sem saber se era verdadeira?
-                                </p>
-
-                            </div>
-
-                            <span class="chart-badge">
-                                35 respostas
-                            </span>
-
-                        </div>
-
-                        <div class="chart-area">
-
-                            <canvas
-                                id="chart1"
-                                role="img"
-                                aria-label="Gráfico das respostas da pergunta 1">
-                            </canvas>
-
-                        </div>
-
-                        <div class="insight">
-
-                            <span>✦</span>
-
-                            <p>
-                                <strong>Principal resultado:</strong>
-                                a resposta mais escolhida foi
-                                “Frequentemente”, e a segunda mais escolhida
-                                foi “Às vezes”, ou seja, 51,4% dos participantes
-                                já acreditaram em uma notícia sem verificar
-                                a veracidade.
-                            </p>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- GRÁFICO 2 -->
-
-                    <article class="chart-card" data-question="q3">
-
-                        <div class="chart-head">
-
-                            <div>
-
-                                <span class="question-number">
-                                    PERGUNTA 02
-                                </span>
-
-                                <h3>O efeito do compartilhamento</h3>
-
-                                <p>
-                                    Você já compartilhou uma notícia que
-                                    não verificou a veracidade?
-                                </p>
-
-                            </div>
-
-                            <span class="chart-badge">
-                                35 respostas
-                            </span>
-
-                        </div>
-
-                        <div class="chart-area">
-
-                            <canvas
-                                id="chart3"
-                                role="img"
-                                aria-label="Gráfico das respostas da pergunta 3">
-                            </canvas>
-
-                        </div>
-
-                        <div class="insight">
-
-                            <span>✦</span>
-
-                            <p>
-                                <strong>Principal resultado:</strong>
-                                “Às vezes” e “Frequentemente” foram as respostas
-                                mais escolhidas, somando 65,7% dos participantes
-                                que já compartilharam uma notícia sem verificar
-                                a veracidade.
-                            </p>
-
-                        </div>
-
-                    </article>
-
-                </div>
-
-            </section>
-
-
-            <!-- CONCLUSÃO -->
-
-            <section class="conclusion-section">
-
-                <div class="conclusion-mark">✓</div>
-
-                <div class="conclusion-content">
-
-                    <span class="eyebrow">
-                        CONCLUSÃO DA PESQUISA
-                    </span>
-
-                    <h2>O que descobri?</h2>
+                    <span>✦</span>
 
                     <p>
-                        Os resultados mostram que muitos estudantes já
-                        acreditaram ou compartilharam notícias sem verificar
-                        sua veracidade. Isso reforça a importância de pesquisar
-                        as fontes e analisar as informações antes de acreditar
-                        ou compartilhar conteúdos encontrados na internet.
+                        <strong>Principal resultado:</strong>
+                        51,4% dos participantes responderam
+                        frequentemente ou às vezes, indicando que já
+                        acreditaram em notícias sem verificar sua veracidade.
                     </p>
 
-                    <div class="conclusion-note">
+                </div>
 
-                        Informação de qualidade começa com uma atitude:
-                        verificar antes de compartilhar.
+
+                <div class="insight" style="margin-top: 10px;">
+
+                    <span>◈</span>
+
+                    <p>
+                        <strong>Justificativa do gráfico:</strong>
+                        O gráfico de rosca permite visualizar a proporção
+                        de cada resposta em relação ao total de participantes.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- GRÁFICO 2 -->
+            <article class="chart-card" data-question="q3">
+
+                <div class="chart-head">
+
+                    <div>
+
+                        <span class="question-number">PERGUNTA 02</span>
+
+                        <h3>O efeito do compartilhamento</h3>
+
+                        <p>
+                            Você já compartilhou uma notícia que não
+                            verificou a veracidade?
+                        </p>
 
                     </div>
 
+                    <span class="chart-badge">35 respostas</span>
+
                 </div>
 
-            </section>
+
+                <div class="chart-area">
+                    <canvas id="chart3"></canvas>
+                </div>
 
 
-            <!-- VERIFICAÇÃO CRÍTICA DA IA -->
+                <div class="filter-control">
 
-            <section class="conclusion-section ia-section">
+                    <label for="filterQ3">
+                        VISUALIZAÇÃO DO GRÁFICO
+                    </label>
 
-                <div class="conclusion-mark">🤖</div>
+                    <select id="filterQ3">
 
-                <div class="conclusion-content">
+                        <option value="all">Todas as respostas</option>
 
-                    <span class="eyebrow">
-                        AVALIAÇÃO CRÍTICA
-                    </span>
+                        <option value="relevant">
+                            Destacar respostas mais relevantes
+                        </option>
 
-                    <h2>Verificação crítica da IA</h2>
+                    </select>
+
+                </div>
+
+
+                <div class="insight">
+
+                    <span>✦</span>
 
                     <p>
-                        Concordamos parcialmente com a análise da inteligência
-                        artificial. Os dados da pesquisa confirmam que muitos
-                        estudantes acreditam e compartilham notícias sem
-                        verificar sua veracidade. Entretanto, a interpretação
-                        dos resultados precisa considerar as respostas dos
-                        participantes, pois são elas que fornecem evidências
-                        para nossas conclusões.
+                        <strong>Principal resultado:</strong>
+                        65,7% dos participantes responderam às vezes
+                        ou frequentemente, demonstrando que já compartilharam
+                        notícias sem verificar sua autenticidade.
                     </p>
-
-                    <div class="conclusion-note">
-
-                        A inteligência artificial auxilia na análise,
-                        mas é necessário questionar suas respostas e
-                        comparar suas afirmações com os dados reais
-                        da pesquisa.
-
-                    </div>
 
                 </div>
 
-            </section>
+
+                <div class="insight" style="margin-top: 10px;">
+
+                    <span>◈</span>
+
+                    <p>
+                        <strong>Justificativa do gráfico:</strong>
+                        O gráfico de rosca facilita a compreensão da
+                        distribuição das respostas e destaca a participação
+                        de cada categoria.
+                    </p>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
 
 
-            <!-- RODAPÉ -->
+    <!-- CONCLUSÃO -->
+    <section class="conclusion-section">
 
-            <footer>
+        <div class="conclusion-mark">✓</div>
 
-                <span>Informar-se também é verificar.</span>
+        <div class="conclusion-content">
 
-                <span>Meu Dilema Digital · Maratona Tech</span>
+            <span class="eyebrow">RESULTADO DA INVESTIGAÇÃO</span>
 
-            </footer>
+            <h2>Conclusão da pesquisa</h2>
 
-        </main>
+            <p>
+                Os resultados confirmam a hipótese inicial: muitos
+                estudantes acreditam e compartilham notícias sem
+                verificar sua veracidade.
+            </p>
 
-    </div>
+            <p>
+                Na pesquisa, 51,4% já acreditaram em notícias sem
+                conferir as fontes, enquanto 65,7% já compartilharam
+                informações sem verificar sua autenticidade.
+            </p>
+
+            <p>
+                Portanto, é fundamental desenvolver o pensamento
+                crítico e verificar as fontes antes de acreditar
+                ou compartilhar uma informação.
+            </p>
+
+            <div class="conclusion-note">
+
+                <strong>Hipótese confirmada:</strong>
+                os resultados apontam que uma parcela significativa
+                dos estudantes não verifica as informações antes
+                de acreditar ou compartilhar notícias.
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ANÁLISE CRÍTICA DA IA -->
+    <section class="conclusion-section ia-section">
+
+        <div class="conclusion-mark">✦</div>
+
+        <div class="conclusion-content">
+
+            <span class="eyebrow">USO CRÍTICO DA TECNOLOGIA</span>
+
+            <h2>Análise crítica da IA</h2>
+
+            <p>
+                <strong>Análise da IA:</strong>
+                A falta de verificação das fontes pode favorecer
+                a disseminação de informações falsas. Por isso,
+                é importante analisar a origem e a confiabilidade
+                das notícias antes de compartilhá-las.
+            </p>
+
+            <p>
+                <strong>Opinião da estudante:</strong>
+                A estudante considera que os resultados confirmam
+                a importância de verificar as informações encontradas
+                na internet antes de acreditar ou compartilhar uma notícia.
+            </p>
+
+            <p>
+                <strong>Evidências da pesquisa:</strong>
+                51,4% dos participantes já acreditaram em notícias
+                sem verificar, e 65,7% já compartilharam informações
+                sem conferir sua veracidade.
+            </p>
+
+            <div class="conclusion-note">
+
+                A análise da IA foi relacionada aos dados coletados
+                na pesquisa, permitindo comparar as interpretações
+                com as respostas dos participantes.
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- RODAPÉ -->
+    <footer>
+
+        <span>MEU DILEMA DIGITAL</span>
+
+        <span>Maratona Tech · 2026</span>
+
+    </footer>
+
+</div>
 
 </body>
-
 </html>

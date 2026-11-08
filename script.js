@@ -1,4 +1,7 @@
-// Alternativas das perguntas
+// ======================================
+// DADOS DA PESQUISA
+// ======================================
+
 const labels = [
     "Sempre",
     "Frequentemente",
@@ -7,7 +10,6 @@ const labels = [
     "Nunca"
 ];
 
-// Cores dos gráficos
 const palette = [
     "#8B5CF6",
     "#F973A7",
@@ -16,136 +18,199 @@ const palette = [
     "#38BDF8"
 ];
 
-// Resultados dos gráficos enviados
 const surveyData = {
     q1: [11.4, 31.4, 20.0, 17.1, 20.0],
-
     q3: [20.0, 28.6, 37.1, 5.7, 8.6]
 };
 
-// Elemento do filtro
-const questionFilter = document.getElementById("questionFilter");
 
-// Cartões dos gráficos
-const chartCards = [
-    ...document.querySelectorAll(".chart-card")
-];
+// ======================================
+// CONFIGURAÇÃO DOS GRÁFICOS
+// ======================================
 
-// Armazena os gráficos
-const chartInstances = {};
+const chartOptions = {
+    responsive: true,
 
-// Função para criar os gráficos
-function makeChart(canvasId, key) {
+    maintainAspectRatio: false,
 
-    const ctx = document.getElementById(canvasId);
+    plugins: {
+        legend: {
+            position: "bottom",
 
-    chartInstances[key] = new Chart(ctx, {
+            labels: {
+                padding: 15,
+                usePointStyle: true
+            }
+        },
 
+        tooltip: {
+            callbacks: {
+                label: function(context) {
+                    return `${context.label}: ${context.raw}%`;
+                }
+            }
+        }
+    }
+};
+
+
+// ======================================
+// CRIAÇÃO DOS GRÁFICOS
+// ======================================
+
+function createChart(canvasId, data) {
+
+    const canvas = document.getElementById(canvasId);
+
+    return new Chart(canvas, {
         type: "doughnut",
 
         data: {
             labels: labels,
 
             datasets: [{
-                label: "Percentual de respostas",
-
-                data: surveyData[key],
-
+                data: data,
                 backgroundColor: palette,
-
+                borderWidth: 2,
                 borderColor: "#ffffff",
-
-                borderWidth: 3,
-
                 hoverOffset: 8
             }]
         },
 
         options: {
+            ...chartOptions,
 
-            responsive: true,
-
-            maintainAspectRatio: false,
-
-            cutout: "62%",
-
-            plugins: {
-
-                legend: {
-
-                    position: "bottom",
-
-                    labels: {
-                        usePointStyle: true,
-
-                        pointStyle: "circle",
-
-                        padding: 16,
-
-                        color: "#675b78",
-
-                        font: {
-                            family: "Inter",
-                            size: 10
-                        }
-                    }
-                },
-
-                tooltip: {
-
-                    backgroundColor: "#2e2140",
-
-                    padding: 12,
-
-                    callbacks: {
-
-                        label: function(context) {
-
-                            const valor = Number(context.raw)
-                                .toLocaleString("pt-BR", {
-                                    maximumFractionDigits: 1
-                                });
-
-                            return ` ${context.label}: ${valor}%`;
-                        }
-                    }
-                }
-            }
+            cutout: "58%"
         }
     });
 }
 
-// Cria os dois gráficos
-makeChart("chart1", "q1");
 
-makeChart("chart3", "q3");
+// Inicialização
 
-// FILTRO DOS GRÁFICOS
-questionFilter.addEventListener("change", function() {
+const chart1 = createChart("chart1", surveyData.q1);
 
-    const selected = questionFilter.value;
+const chart3 = createChart("chart3", surveyData.q3);
 
-    chartCards.forEach(function(card) {
 
-        if (
-            selected === "all" ||
-            card.dataset.question === selected
-        ) {
-            card.hidden = false;
+// ======================================
+// FILTROS INDIVIDUAIS DOS GRÁFICOS
+// ======================================
+
+function applyIndividualFilter(chart, question, filterValue) {
+
+    if (filterValue === "all") {
+
+        chart.data.labels = labels;
+
+        chart.data.datasets[0].data = surveyData[question];
+
+        chart.data.datasets[0].backgroundColor = palette;
+
+    } else {
+
+        let relevantPercentage;
+        let relevantLabel;
+
+        if (question === "q1") {
+
+            // Frequentemente + Às vezes = 51,4%
+
+            relevantPercentage = 51.4;
+
+            relevantLabel = "Frequentemente ou às vezes";
+
         } else {
-            card.hidden = true;
+
+            // Às vezes + Frequentemente = 65,7%
+
+            relevantPercentage = 65.7;
+
+            relevantLabel = "Às vezes ou frequentemente";
         }
+
+        const remainingPercentage = Number(
+            (100 - relevantPercentage).toFixed(1)
+        );
+
+        chart.data.labels = [
+            `${relevantLabel} (${relevantPercentage}%)`,
+            `Demais respostas (${remainingPercentage}%)`
+        ];
+
+        chart.data.datasets[0].data = [
+            relevantPercentage,
+            remainingPercentage
+        ];
+
+        chart.data.datasets[0].backgroundColor = [
+            "#F973A7",
+            "#D9D9D9"
+        ];
+    }
+
+    chart.update();
+}
+
+
+// Filtro do gráfico 1
+
+document
+    .getElementById("filterQ1")
+    .addEventListener("change", function() {
+
+        applyIndividualFilter(
+            chart1,
+            "q1",
+            this.value
+        );
 
     });
 
-});
 
-// Ajusta os gráficos ao redimensionar a tela
-window.addEventListener("resize", function() {
+// Filtro do gráfico 2
 
-    Object.values(chartInstances).forEach(function(chart) {
+document
+    .getElementById("filterQ3")
+    .addEventListener("change", function() {
 
-        chart.resize();
+        applyIndividualFilter(
+            chart3,
+            "q3",
+            this.value
+        );
+
+    });
+
+
+// ======================================
+// FILTRO GERAL DAS PERGUNTAS
+// ======================================
+
+const questionFilter = document.getElementById("questionFilter");
+
+const chartCards = document.querySelectorAll(".chart-card");
+
+questionFilter.addEventListener("change", function() {
+
+    const selectedQuestion = this.value;
+
+    chartCards.forEach(card => {
+
+        const cardQuestion = card.dataset.question;
+
+        if (
+            selectedQuestion === "all" ||
+            selectedQuestion === cardQuestion
+        ) {
+
+            card.style.display = "";
+
+        } else {
+
+            card.style.display = "none";
+
+        }
 
     });
 
